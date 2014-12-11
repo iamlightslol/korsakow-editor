@@ -17,7 +17,6 @@ import org.korsakow.ide.ui.controller.action.CopyAction;
 import org.korsakow.ide.ui.controller.action.DeleteAction;
 import org.korsakow.ide.ui.controller.action.DuplicateAction;
 import org.korsakow.ide.ui.controller.action.ExitAction;
-import org.korsakow.ide.ui.controller.action.ExportDraftWebAction;
 import org.korsakow.ide.ui.controller.action.ExportMenuAction;
 import org.korsakow.ide.ui.controller.action.ExportWebAction;
 import org.korsakow.ide.ui.controller.action.HelpExampleAction;
@@ -68,7 +67,6 @@ public class ProjectExplorerController
 		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileImportInterface, new ImportInterfaceAction());
 		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileExport, new ExportMenuAction(projectExplorer.getResourceBrowser().getResourceTreeTable()));
 		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileExportWeb, new ExportWebAction());
-		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileExportDraftWeb, new ExportDraftWebAction());
 		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileExportInterface, new ExportInterfaceAction(projectExplorer.getResourceBrowser().getResourceTreeTable()));
 		exitAction = new ExitAction();
 		projectExplorer.addMenuAction(ProjectExplorer.Action.MenuFileExit, exitAction);
@@ -138,7 +136,7 @@ public class ProjectExplorerController
 		JProgressBar progressBar;
 		public ProgressBarWorkerListener(JProgressBar progressBar)
 		{
-			this.progressBar = progressBar;
+			progressBar = progressBar;
 		}
 		public void propertyChange(PropertyChangeEvent event) {
 			if (event.getPropertyName().equals("progress")) {
